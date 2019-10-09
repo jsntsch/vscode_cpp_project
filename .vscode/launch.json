@@ -8,10 +8,10 @@
         "name": "(gdb) Launch",
         "type": "cppdbg",
         "request": "launch",
-        "program": "~/projects/cpp_demo/main.out",
+        "program": "~/vscode_cpp_project/main.out",
         "args": [""],
         "stopAtEntry": true,
-        "cwd": "~/projects/cpp_demo/",
+        "cwd": "~/vscode_cpp_project/",
         "environment": [],
         "externalConsole": true,
         "windows": {

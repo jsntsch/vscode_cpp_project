@@ -16,7 +16,7 @@
         "args": [
           "-g",
           "-o",
-          "~/projects/cpp_demo/main.out",
+          "~/vscode_cpp_project/main.out",
           "main.cpp"
         ],
         "group": {
