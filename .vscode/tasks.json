@@ -1,28 +1,48 @@
 {
-    "version": "2.0.0",
-    "windows": {
-      "options": {
-        "shell": {
-          "executable": "/bin/bash",
-          "args": ["-c"]
-        }
+  "version": "2.0.0",
+  "windows": {
+    "options": {
+      "shell": {
+        "executable": "/bin/bash",
+        "args": ["-c"]
       }
-    },
-    "tasks": [
-      {
-        "label": "build hello world on WSL",
-        "type": "shell",
-        "command": "g++",
-        "args": [
-          "-g",
-          "-o",
-          "~/vscode_cpp_project/main.out",
-          "main.cpp"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        }
+    }
+  },
+  "tasks": [
+    {
+      "label": "build on WSL",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "-o",
+        "${workspaceFolder}/main.o",
+        "main.cpp" , 
+        // 设置 opencv 动态链接库  
+        // -I表示头文件目录，，  
+        "-I", "/usr/local/include",
+        "-I", "/usr/local/include/opencv",
+        "-I", "/usr/local/include/opencv2",
+        // -L表示库文件目录
+        "-L", "/usr/local/lib",
+        // -l表示库文件     
+        "-l", "opencv_core",
+        "-l", "opencv_imgproc",
+        "-l", "opencv_imgcodecs",
+        "-l", "opencv_video",
+        "-l", "opencv_highgui",
+        "-l", "opencv_objdetect",
+        "-l", "opencv_flann",
+        "-l", "opencv_imgcodecs",
+        "-l", "opencv_photo",
+        "-l", "opencv_videoio",
+        "-l", "opencv_features2d",
+        "-l", "opencv_xfeatures2d",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
-    ]
-  }
+    }
+  ]
+}
