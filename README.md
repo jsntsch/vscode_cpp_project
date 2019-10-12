@@ -44,7 +44,7 @@ sudo make install
 ```
 sudo vim /etc/ld.so.conf.d/opencv.conf 
 ```
-wrote  ` /usr/local/lib/ `  to  ` opencv.conf `  file
+write  ` /usr/local/lib/ `  to  ` opencv.conf `  file
 ```
 sudo ldconfig -v
 ```

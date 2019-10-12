@@ -14,18 +14,16 @@
       "type": "shell",
       "command": "g++",
       "args": [
-        "-g",
-        "-o",
-        "${workspaceFolder}/main.o",
-        "main.cpp" , 
+        "-g", "-std=c++11", "${file}",
+        "-o", "${workspaceFolder}/${fileBasenameNoExtension}.o",
         // 设置 opencv 动态链接库  
-        // -I表示头文件目录，，  
+        // -I 表示头文件目录
         "-I", "/usr/local/include",
         "-I", "/usr/local/include/opencv",
         "-I", "/usr/local/include/opencv2",
-        // -L表示库文件目录
+        // -L 表示库文件目录
         "-L", "/usr/local/lib",
-        // -l表示库文件     
+        // -l 表示库文件     
         "-l", "opencv_core",
         "-l", "opencv_imgproc",
         "-l", "opencv_imgcodecs",
